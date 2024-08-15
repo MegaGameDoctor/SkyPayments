@@ -25,8 +25,8 @@ cart: # Настройки корзины
 
 shop: # Данные Вашего магазина
   shopID: 1
-  serverID: 2
-  secretKey: '19O_9!bBZI1Aa9nRD6KgkNuk'
+  serverID: 1
+  secretKey: '-'
 
 database: # Настройки базы данных
   # Доступные типы: MYSQL, SQLITE
