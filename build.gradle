@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+rootProject.tasks.named("jar") {
+    duplicatesStrategy = 'include'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation project(path: ':NMS-core')
+    implementation project(path: ':NMS-1_8_8')
+    implementation project(path: ':NMS-1_13_2')
+
+    compileOnly 'org.jetbrains:annotations:24.0.0'
+    compileOnly 'org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT'
+
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+
+    compileOnly("com.mysql:mysql-connector-j:8.3.0")
+
+    compileOnly 'org.xerial:sqlite-jdbc:3.45.1.0'
+
+    implementation 'com.google.code.gson:gson:2.11.0'
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+}
+
+shadowJar {
+    mergeServiceFiles()
+    dependencies {
+        include(project(':NMS-core'))
+        include(project(':NMS-1_8_8'))
+        include(project(':NMS-1_13_2'))
+        include(dependency('com.google.code.gson:gson'))
+    }
+
+    relocate 'com.google.gson', 'libs.gson'
+}

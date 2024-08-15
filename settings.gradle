@@ -1,0 +1,5 @@
+rootProject.name = 'SkyPayments'
+include 'NMS-1_8_8'
+include 'NMS-1_13_2'
+include 'NMS-core'
+

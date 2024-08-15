@@ -1,0 +1,56 @@
+# Файл для настройки сообщений на Русском языке
+
+cartInv: # Настройки ГУИ корзины
+  name: "&aНажмите, чтобы получить"
+  items:
+    back:
+      name: "&cНазад"
+      material: "OAK_SIGN"
+    next:
+      name: "&cВперёд"
+      material: "OAK_SIGN"
+
+messages: # Сообщения в чат
+  mainCmdHelp:
+    chat:
+      enable: true
+      lines:
+        - "&e------------ &dSkyPayments &e------------"
+        - "&d/%cmd% &7base64 &7<айди>&f: Конвертировать предмет в руке в айди или раскодировать уже существующий"
+  # Для этого сообщения недоступны дополнительные параметры
+  mainCmdEncodeAnswer: "&aПредмет закодирован. &nНажмите, чтобы скопировать айди"
+  mainCmdEncodeFail:
+    chat:
+      enable: true
+      lines:
+        - "&cВозьмите предмет в руку"
+  freeInventory:
+    chat:
+      enable: true
+      lines:
+        - "&cОсвободите инвентарь!"
+  failed:
+    chat:
+      enable: true
+      lines:
+        - "&cЧто-то пошло не так"
+  mainCmdDecodeSuccess:
+    chat:
+      enable: true
+      lines:
+        - "&aПредмет успешно раскодирован и выдан Вам!"
+  cartItemsGet:
+    chat:
+      enable: true
+      lines:
+        - "&aПредметы получены!"
+  cartUpdated:
+    chat:
+      enable: true
+      lines:
+        - "&aВ Вашей корзине что-то появилось! Напишите /cart, чтобы проверить"
+  cartEmpty:
+    chat:
+      enable: true
+      lines:
+        - "&cКорзина пуста :("
