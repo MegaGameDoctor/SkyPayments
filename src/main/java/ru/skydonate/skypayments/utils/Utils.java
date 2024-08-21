@@ -180,7 +180,7 @@ public class Utils {
                 } else if (order.getType().equals("cart")) {
                     int counter = 1;
                     for (String action : order.getActions()) {
-                        plugin.getDatabaseManager().getDbManager().addOrderToWaitingList(new Order(order.getOrder_id() + "_" + counter++, order.getType(), order.getUsername(), new String[]{action}, OrderStatus.WAITING_TO_RECEIVE));
+                        plugin.getDatabaseManager().getDbManager().addOrderToWaitingList(new Order(order.getOrder_id() + "_" + counter++, order.getType(), order.getUsername(), new String[]{action}, true, OrderStatus.WAITING_TO_RECEIVE));
                     }
                     Player receiver = Bukkit.getPlayer(order.getUsername());
                     if (receiver != null && receiver.isOnline()) {
@@ -198,7 +198,7 @@ public class Utils {
         if (order.getType().equals("command")) {
             Player receiver = Bukkit.getPlayer(order.getUsername());
 
-            if (receiver != null && receiver.isOnline()) {
+            if ((receiver != null && receiver.isOnline()) || !order.is_online()) {
                 for (String command : order.getActions()) {
                     new BukkitRunnable() {
                         public void run() {

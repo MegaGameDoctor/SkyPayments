@@ -46,7 +46,7 @@ public class MySQLDBManager implements DBManager {
             preparedStatement.setString(4, type);
             ResultSet set = preparedStatement.executeQuery();
             while (set.next()) {
-                orders.add(new Order(set.getString("orderID"), set.getString("type"), set.getString("player"), plugin.getUtils().readObjectFromBase64(set.getString("data"), String[].class), OrderStatus.valueOf(set.getString("status"))));
+                orders.add(new Order(set.getString("orderID"), set.getString("type"), set.getString("player"), plugin.getUtils().readObjectFromBase64(set.getString("data"), String[].class), true, OrderStatus.valueOf(set.getString("status"))));
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -11,6 +11,7 @@ public class Order {
     private final String type;
     private final String username;
     private final String[] actions;
+    private final boolean is_online;
     @Setter
     private OrderStatus status;
 }
