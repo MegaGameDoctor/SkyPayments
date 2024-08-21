@@ -54,7 +54,7 @@ public class CartGUI {
             }
         }
 
-        if (!lostedItems.isEmpty()) {
+        if (!lostedItems.isEmpty() && plugin.getMainConfig().isDebug()) {
             plugin.getLogger().log(Level.SEVERE, "Не удалось отобразить корзину игроку '" + player.getName() + "'. Предметы '" + lostedItems + "' не найдены");
         }
 

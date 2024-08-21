@@ -94,7 +94,7 @@ public class SkyPayments extends JavaPlugin {
                             utils.markOrdersAsReceivedAndAdd(toMarkReceivedAndAdd);
                         }
                     } else {
-                        if (mainChecker != null)
+                        if (mainChecker != null && mainConfig.isDebug())
                             getLogger().log(Level.SEVERE, "Не удалось получить список платежей. Обратитесь к Администратору");
                     }
                     try {

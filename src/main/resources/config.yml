@@ -12,6 +12,8 @@ settings: # Основные настройки
   messagesPrefix: "&fSkyPayments &e> &f"
   # Название файла с настройками сообщений
   langFile: "ru_RU.yml"
+  # Если true - в консоль будут отправляться сообщения о запросах к серверам SkyDonate
+  debug: false
 
 cart: # Настройки корзины
   command: # Параметры команды для открытия корзины

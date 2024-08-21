@@ -1,6 +1,6 @@
 name: SkyPayments
 main: ru.skydonate.skypayments.SkyPayments
-version: "1.1.0"
+version: "1.2"
 api-version: "1.13"
 author: _GameDoctor_
 description: "Plugin to automatically issue goods on your Minecraft server. Developed by SkyDonate team."

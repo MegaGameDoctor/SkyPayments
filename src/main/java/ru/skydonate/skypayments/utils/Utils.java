@@ -140,7 +140,7 @@ public class Utils {
                 throw new Exception();
             }
         } catch (Exception ignored) {
-            plugin.getLogger().log(Level.SEVERE, "Ответ сервера: " + answer);
+            if (plugin.getMainConfig().isDebug()) plugin.getLogger().log(Level.SEVERE, "Ответ сервера: " + answer);
         }
         return null;
     }
@@ -169,8 +169,10 @@ public class Utils {
         }
 
         if (!success) {
-            plugin.getLogger().log(Level.SEVERE, "Не удалось пометить платежи '" + stringed + "' выполненными. Обратитесь к Администратору");
-            plugin.getLogger().log(Level.SEVERE, "Ответ сервера: " + answer);
+            if (plugin.getMainConfig().isDebug()) {
+                plugin.getLogger().log(Level.SEVERE, "Не удалось пометить платежи '" + stringed + "' выполненными. Обратитесь к Администратору");
+                plugin.getLogger().log(Level.SEVERE, "Ответ сервера: " + answer);
+            }
         } else {
             List<String> alreadyAlerted = new ArrayList<>();
             for (Order order : orders) {

@@ -18,6 +18,7 @@ public class Config {
     private final int shop_serverID;
     private final String shop_secretKey;
     private final String requestSign;
+    private final boolean debug;
 
     private final Message message_mainCmdHelp;
     private final TextComponent message_mainCmdEncodeAnswer;
@@ -42,6 +43,7 @@ public class Config {
         this.shop_serverID = cfg.getInt("shop.serverID");
         this.shop_secretKey = cfg.getString("shop.secretKey");
         this.requestSign = utils.md5Hash(this.shop_shopID + ":" + this.shop_serverID + ":" + this.shop_secretKey);
+        this.debug = cfg.getBoolean("settings.debug", false);
 
         this.cartInv_name = utils.color(messagesCfg.getString("cartInv.name"));
         this.cartInv_items_next = utils.makeItem(Material.matchMaterial(messagesCfg.getString("cartInv.items.next.material")), utils.color(messagesCfg.getString("cartInv.items.next.name")), new LinkedList<>());
