@@ -128,7 +128,7 @@ public class Utils {
     }
 
     public Order[] getActiveOrdersFromAPI() {
-        String answer = "NONE";
+        String answer = "Некорректный ответ";
         try {
             answer = makeRequestAndGetAnswer("https://api-skydonate.galaxyprotect.pro/api/v1/method/orders.get", "sign=" + plugin.getMainConfig().getRequestSign());
             JsonObject jsonObject = JsonParser.parseString(answer).getAsJsonObject();
